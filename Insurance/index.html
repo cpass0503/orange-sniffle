@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Geico Scam Deluxe: The Ultimate Insurance Scam!</title>
+  <style>
+    /* Overall page styling with a vibrant gradient background */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    
+    p {
+      font-size: 1.2em;
+    }
+    
+    /* Header image styling */
+    .header-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    
+    /* Main clicker button styling with bounce animation */
+    #clicker-button {
+      font-size: 1.5em;
+      padding: 20px 40px;
+      margin: 20px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.2s;
+      position: relative;
+    }
+    
+    #clicker-button:active {
+      transform: scale(0.95);
+    }
+    
+    .bounce {
+      animation: bounce 0.5s;
+    }
+    
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .clicker-img {
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    
+    /* Stats display styling */
+    #stats {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    /* Goal Progress Bar */
+    #goal-progress-container {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+    
+    #goal-progress-container p {
+      margin: 5px 0;
+      font-size: 1.1em;
+    }
+    
+    #goal-progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+    
+    /* Achievement Notifications (top-right corner) */
+    #achievement-notifications {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+    
+    .notification {
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 8px 12px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      opacity: 0;
+      animation: fadeInOut 3s forwards;
+    }
+    
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-20px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }
+    
+    /* Hamburger Menu for Achievements (top-left corner) */
+    #hamburger {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1001;
+      cursor: pointer;
+      font-size: 2em;
+      user-select: none;
+    }
+    
+    /* Achievements Panel (hidden by default) */
+    #achievements-panel {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      transition: left 0.3s;
+      padding: 20px;
+      z-index: 1000;
+    }
+    
+    #achievements-panel.open {
+      left: 0;
+    }
+    
+    #achievements-panel h2 {
+      margin-top: 0;
+    }
+    
+    .achievement-item {
+      text-align: left;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    
+    .achievement-unlocked {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    
+    /* Upgrades Section Styling */
+    #upgrades {
+      margin-top: 40px;
+    }
+    
+    .upgrade {
+      border: 2px solid #fff;
+      padding: 15px;
+      margin: 15px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      display: inline-block;
+      width: 300px;
+      vertical-align: top;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    
+    .upgrade:hover {
+      transform: scale(1.05);
+    }
+    
+    .upgrade h4 {
+      margin: 10px 0;
+      color: #2980b9;
+    }
+    
+    .upgrade button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    
+    .upgrade button:hover {
+      background-color: #1f6391;
+    }
+    
+    .upgrade-img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    
+    /* Prestige Section Styling */
+    #prestige-section {
+      margin-top: 30px;
+      padding: 15px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border-radius: 10px;
+      display: none;
+    }
+    
+    #prestige-button {
+      padding: 10px 20px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    
+    #prestige-button:hover {
+      background-color: #d35400;
+    }
+    
+    /* Challenge Modal (for IRS Investigation) */
+    #challenge-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      color: #fff;
+      text-align: center;
+      padding-top: 100px;
+    }
+    
+    #challenge-modal div {
+      background: #333;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+    
+    /* Footer Styling */
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- Hamburger Menu Icon for Achievements -->
+  <div id="hamburger">&#9776;</div>
+  
+  <!-- Achievements Panel -->
+  <div id="achievements-panel">
+    <h2>Achievements</h2>
+    <div id="achievements-list">
+      <!-- Achievement items will be populated here -->
+    </div>
+  </div>
+  
+  <!-- Header Section with an Image -->
+  <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Insurance Logo" class="header-img">
+  
+  <h1>Geico Scam Deluxe</h1>
+  <p>Sell policies, earn premiums, and build your insurance empire. Your goal? Reach your target funds and become the King of Scams!</p>
+  
+  <!-- Main Clicker Button with an Optional Image -->
+  <button id="clicker-button">
+    <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Sell Insurance" class="clicker-img">
+    Sell Insurance!
+  </button>
+  
+  <!-- Stats Display -->
+  <div id="stats">
+    Funds: $<span id="funds">0</span> | Policies Sold: <span id="policies">0</span>
+  </div>
+  
+  <!-- Goal Progress Bar -->
+  <div id="goal-progress-container">
+    <p id="goal-text">Goal: Reach $1,000,000 Funds</p>
+    <progress id="goal-progress" value="0" max="1000000"></progress>
+  </div>
+  
+  <!-- Achievement Notifications Container -->
+  <div id="achievement-notifications"></div>
+  
+  <!-- Upgrades Section -->
+  <div id="upgrades">
+    <!-- Marketing Campaign Upgrade -->
+    <div class="upgrade">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Marketing Campaign" class="upgrade-img">
+      <h4>Marketing Campaign</h4>
+      <p>Boost premium per sale by $1.</p>
+      <p>Cost: $<span id="cost-marketing">10</span></p>
+      <button onclick="buyUpgrade('marketing')">Buy</button>
+      <button onclick="maxBuyUpgrade('marketing')">Max Buy</button>
+    </div>
+    
+    <!-- Hire Agent Upgrade -->
+    <div class="upgrade">
+      <img src="https://i.redd.it/inr4s06opnc81.png" alt="Hire Agent" class="upgrade-img">
+      <h4>Hire Agent</h4>
+      <p>Gain $1 per second passive income.</p>
+      <p>Cost: $<span id="cost-agent">50</span></p>
+      <button onclick="buyUpgrade('agent')">Buy</button>
+      <button onclick="maxBuyUpgrade('agent')">Max Buy</button>
+    </div>
+    
+    <!-- Sales Training Upgrade -->
+    <div class="upgrade">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Sales Training" class="upgrade-img">
+      <h4>Sales Training</h4>
+      <p>Increase premium per sale by $5.</p>
+      <p>Cost: $<span id="cost-training">200</span></p>
+      <button onclick="buyUpgrade('training')">Buy</button>
+      <button onclick="maxBuyUpgrade('training')">Max Buy</button>
+    </div>
+    
+    <!-- Office Expansion Upgrade -->
+    <div class="upgrade">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Office Expansion" class="upgrade-img">
+      <h4>Office Expansion</h4>
+      <p>Boost both passive income and premium per sale by 50%.</p>
+      <p>Cost: $<span id="cost-expansion">500</span></p>
+      <button onclick="buyUpgrade('expansion')">Buy</button>
+      <button onclick="maxBuyUpgrade('expansion')">Max Buy</button>
+    </div>
+    
+    <!-- Social Media Blitz Upgrade -->
+    <div class="upgrade">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Social Media Blitz" class="upgrade-img">
+      <h4>Social Media Blitz</h4>
+      <p>Increase premium per sale by 20% (multiplicative boost).</p>
+      <p>Cost: $<span id="cost-social">300</span></p>
+      <button onclick="buyUpgrade('socialMedia')">Buy</button>
+      <button onclick="maxBuyUpgrade('socialMedia')">Max Buy</button>
+    </div>
+    
+    <!-- Viral Ad Campaign Upgrade -->
+    <div class="upgrade">
+      <img src="https://static.tvtropes.org/pmwiki/pub/images/geico.png" alt="Viral Ad Campaign" class="upgrade-img">
+      <h4>Viral Ad Campaign</h4>
+      <p>Increase passive income by 50% (multiplicative boost).</p>
+      <p>Cost: $<span id="cost-viral">400</span></p>
+      <button onclick="buyUpgrade('viralAd')">Buy</button>
+      <button onclick="maxBuyUpgrade('viralAd')">Max Buy</button>
+    </div>
+    
+    <!-- Customer Loyalty Program Upgrade (New!) -->
+    <div class="upgrade">
+      <img src="https://via.placeholder.com/280x150?text=Customer+Loyalty" alt="Customer Loyalty Program" class="upgrade-img">
+      <h4>Customer Loyalty Program</h4>
+      <p>Increase premium per sale by $10 and add $2 passive income.</p>
+      <p>Cost: $<span id="cost-loyalty">1000</span></p>
+      <button onclick="buyUpgrade('loyalty')">Buy</button>
+      <button onclick="maxBuyUpgrade('loyalty')">Max Buy</button>
+    </div>
+  </div>
+  
+  <!-- Challenge Modal: IRS Investigation -->
+  <div id="challenge-modal">
+    <div>
+      <h1>IRS Investigation!</h2>
+      <p>The IRS is investigating your scam. How do you respond?</p>
+      <button onclick="handleChallenge('cooperate')">Cooperate (Lose 10% of funds)</button>
+      <button onclick="handleChallenge('deny')">Deny Everything (50/50 chance)</button>
+      <button onclick="handleChallenge('bribe')">Bribe (Lose 15% & get bonus)</button>
+    </div>
+  </div>
+  
+  <!-- Prestige Section: Appears when funds reach the current goal -->
+  <div id="prestige-section">
+    <button id="prestige-button">Prestige! Reset for Multiplier Boost</button>
+    <p>Your Prestige Multiplier: x<span id="prestige-multiplier">1.0</span></p>
+  </div>
+  
+  <!-- Optional Audio Element for Click Sound -->
+  <audio id="click-sound" src="vine-boom.mp3"></audio>
+  
+  <!-- Footer with Instructions -->
+  <footer>
+    <p>Customize images and sounds by replacing the URLs. Reach your goal, unlock achievements, and become the ultimate insurance scammer!</p>
+  </footer>
+  
+  <script>
+    // Global game state variables
+    let funds = 0;
+    let basePremium = 1;  // Set to 1 for incremental progress
+    let policies = 0;
+    let prestigeMultiplier = 1.0; // Stored multiplier
+    let prestigeCount = 0; // Number of times you've prestiged
+    let currentGoal = 1000000; // Starting goal: $1,000,000
+    let premiumPerClick = basePremium * prestigeMultiplier;
+    let passiveIncome = 0;
+    
+    // Upgrade purchase tracking for achievements
+    let socialMediaBought = 0;
+    let viralAdBought = 0;
+    
+    // Achievements tracking
+    const achievements = {
+      firstPolicy: false,
+      risingStar: false,
+      scammer: false,
+      insuranceKing: false,
+      socialMediaGuru: false,
+      viralMaster: false
+    };
+    
+    const achievementDescriptions = {
+      firstPolicy: "First Policy Sold!",
+      risingStar: "Rising Star (Earn $100)!",
+      scammer: "Insurance Scammer (Earn $1,000)!",
+      insuranceKing: "King of Scams (Earn Goal Funds)!",
+      socialMediaGuru: "Social Media Guru (Buy Social Media Blitz Upgrade)!",
+      viralMaster: "Viral Master (Buy Viral Ad Campaign Upgrade)!"
+    };
+    
+    // Upgrade definitions with cost scaling and effects
+    const upgrades = {
+      marketing: { cost: 10, effect: () => { premiumPerClick += 1; } },
+      agent: { cost: 50, effect: () => { passiveIncome += 1; } },
+      training: { cost: 200, effect: () => { premiumPerClick += 5; } },
+      expansion: { 
+        cost: 500, 
+        effect: () => {
+          premiumPerClick = Math.floor(premiumPerClick * 1.5);
+          passiveIncome = Math.floor(passiveIncome * 1.5);
+        } 
+      },
+      socialMedia: { 
+        cost: 300, 
+        effect: () => { 
+          premiumPerClick = Math.floor(premiumPerClick * 1.2); 
+          socialMediaBought++;
+        }
+      },
+      viralAd: { 
+        cost: 400, 
+        effect: () => { 
+          passiveIncome = Math.floor(passiveIncome * 1.5); 
+          viralAdBought++;
+        }
+      },
+      loyalty: { 
+        cost: 1000, 
+        effect: () => { 
+          premiumPerClick += 10; 
+          passiveIncome += 2; 
+        }
+      }
+    };
+    
+    // DOM element references
+    const fundsDisplay = document.getElementById('funds');
+    const policiesDisplay = document.getElementById('policies');
+    const goalProgress = document.getElementById('goal-progress');
+    const achievementNotifications = document.getElementById('achievement-notifications');
+    const achievementsList = document.getElementById('achievements-list');
+    const goalText = document.getElementById('goal-text');
+    
+    // Update main displays: funds, policies, progress bar
+    function updateDisplay() {
+      fundsDisplay.textContent = funds;
+      policiesDisplay.textContent = policies;
+      goalProgress.value = funds;
+    }
+    
+    // Update upgrade cost displays
+    function updateUpgradeDisplay() {
+      document.getElementById('cost-marketing').textContent = upgrades.marketing.cost;
+      document.getElementById('cost-agent').textContent = upgrades.agent.cost;
+      document.getElementById('cost-training').textContent = upgrades.training.cost;
+      document.getElementById('cost-expansion').textContent = upgrades.expansion.cost;
+      document.getElementById('cost-social').textContent = upgrades.socialMedia.cost;
+      document.getElementById('cost-viral').textContent = upgrades.viralAd.cost;
+      document.getElementById('cost-loyalty').textContent = upgrades.loyalty.cost;
+    }
+    
+    // Display a notification in the top-right achievements container
+    function showNotification(text) {
+      const note = document.createElement('div');
+      note.className = 'notification';
+      note.textContent = text;
+      achievementNotifications.appendChild(note);
+      setTimeout(() => { achievementNotifications.removeChild(note); }, 3000);
+    }
+    
+    // Check and unlock achievements
+    function checkAchievements() {
+      if (!achievements.firstPolicy && policies >= 1) {
+        achievements.firstPolicy = true;
+        showNotification(achievementDescriptions.firstPolicy);
+      }
+      if (!achievements.risingStar && funds >= 100) {
+        achievements.risingStar = true;
+        showNotification(achievementDescriptions.risingStar);
+      }
+      if (!achievements.scammer && funds >= 1000) {
+        achievements.scammer = true;
+        showNotification(achievementDescriptions.scammer);
+      }
+      if (!achievements.insuranceKing && funds >= currentGoal) {
+        achievements.insuranceKing = true;
+        showNotification(achievementDescriptions.insuranceKing);
+      }
+      if (!achievements.socialMediaGuru && socialMediaBought > 0) {
+        achievements.socialMediaGuru = true;
+        showNotification(achievementDescriptions.socialMediaGuru);
+      }
+      if (!achievements.viralMaster && viralAdBought > 0) {
+        achievements.viralMaster = true;
+        showNotification(achievementDescriptions.viralMaster);
+      }
+      updateAchievementsMenu();
+    }
+    
+    // Update Achievements Panel (hamburger menu)
+    function updateAchievementsMenu() {
+      achievementsList.innerHTML = '';
+      for (const key in achievementDescriptions) {
+        const item = document.createElement('div');
+        item.className = 'achievement-item';
+        item.textContent = achievementDescriptions[key] + (achievements[key] ? " ✓" : " ✗");
+        if (achievements[key]) item.classList.add('achievement-unlocked');
+        achievementsList.appendChild(item);
+      }
+    }
+    
+    // Toggle achievements panel visibility via hamburger menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const panel = document.getElementById('achievements-panel');
+      panel.classList.toggle('open');
+    });
+    
+    // Main click event: Sell insurance, animate button, add bonus funds, and randomly trigger challenge
+    document.getElementById('clicker-button').addEventListener('click', () => {
+      const button = document.getElementById('clicker-button');
+      button.classList.add("bounce");
+      setTimeout(() => { button.classList.remove("bounce"); }, 500);
+      
+      // Increase funds and policies with multiplier applied
+      funds += Math.floor(premiumPerClick * prestigeMultiplier);
+      policies++;
+      
+      // 20% chance for bonus event
+      if (Math.random() < 0.2) {
+        const bonus = Math.floor(Math.random() * 10) + 5;
+        funds += bonus;
+        showNotification("Bonus Sale! +" + bonus + " funds!");
+      } else {
+        showNotification("Policy Sold!");
+      }
+      
+      // 5% chance to trigger IRS Investigation challenge
+      if (Math.random() < 0.005) {
+        showChallenge();
+      }
+      
+      checkAchievements();
+      updateDisplay();
+      checkPrestigeAvailability();
+    });
+    
+    // Function to purchase a single upgrade
+    function buyUpgrade(upgradeName) {
+      const upgrade = upgrades[upgradeName];
+      if (funds >= upgrade.cost) {
+        funds -= upgrade.cost;
+        upgrade.effect();
+        upgrade.cost = Math.floor(upgrade.cost * 1.5);
+        updateDisplay();
+        updateUpgradeDisplay();
+        showNotification("Upgrade Purchased!");
+      } else {
+        showNotification("Not enough funds!");
+      }
+      checkAchievements();
+      checkPrestigeAvailability();
+    }
+    
+    // Max Buy function: Purchase as many of an upgrade as possible
+    function maxBuyUpgrade(upgradeName) {
+      const upgrade = upgrades[upgradeName];
+      let count = 0;
+      while (funds >= upgrade.cost) {
+        funds -= upgrade.cost;
+        upgrade.effect();
+        count++;
+        upgrade.cost = Math.floor(upgrade.cost * 1.5);
+      }
+      if (count > 0) {
+        updateDisplay();
+        updateUpgradeDisplay();
+        showNotification("Max Buy: Purchased " + count + " " + upgradeName + " upgrade(s)!");
+      } else {
+        showNotification("Not enough funds for a max buy of " + upgradeName + "!");
+      }
+      checkAchievements();
+      checkPrestigeAvailability();
+    }
+    
+    // Passive income: add funds every second with multiplier applied
+    setInterval(() => {
+      funds += Math.floor(passiveIncome * prestigeMultiplier);
+      updateDisplay();
+      checkAchievements();
+      checkPrestigeAvailability();
+    }, 1000);
+    
+    // Check if Prestige should be available (funds >= currentGoal)
+    function checkPrestigeAvailability() {
+      const prestigeSection = document.getElementById('prestige-section');
+      if (funds >= currentGoal) {
+        prestigeSection.style.display = 'block';
+      } else {
+        prestigeSection.style.display = 'none';
+      }
+    }
+    
+    // Prestige: Reset progress and update multiplier and goal based on prestige count
+    document.getElementById('prestige-button').addEventListener('click', () => {
+      prestigeCount++;
+      // Update multiplier: each prestige adds 0.1 to the stored multiplier
+      prestigeMultiplier = 1.0 + (prestigeCount * 0.1);
+      
+      // Increase the goal by a factor of 10
+      currentGoal *= 10;
+      goalProgress.max = currentGoal;
+      goalText.textContent = "Goal: Reach $" + currentGoal.toLocaleString() + " Funds";
+      
+      // Reset progress and recalc premiumPerClick based on basePremium and new multiplier
+      funds = 0;
+      policies = 0;
+      passiveIncome = 0;
+      premiumPerClick = basePremium * prestigeMultiplier;
+      
+      updateDisplay();
+      updateUpgradeDisplay();
+      document.getElementById('prestige-multiplier').textContent = prestigeMultiplier.toFixed(1);
+      showNotification("Prestige Achieved! Multiplier is now x" + prestigeMultiplier.toFixed(1));
+      checkPrestigeAvailability();
+    });
+    
+    /* ----- Challenge (Minigame) Functions ----- */
+    function showChallenge() {
+      document.getElementById('challenge-modal').style.display = 'block';
+    }
+    
+    function hideChallenge() {
+      document.getElementById('challenge-modal').style.display = 'none';
+    }
+    
+    function handleChallenge(choice) {
+      if (choice === 'cooperate') {
+        let loss = Math.floor(funds * 0.1);
+        funds -= loss;
+        showNotification("You cooperated. Lost $" + loss + " funds.");
+      } else if (choice === 'deny') {
+        if (Math.random() < 0.5) {
+          let bonus = Math.floor(funds * 0.2);
+          funds += bonus;
+          showNotification("You successfully denied! Gained $" + bonus + " funds.");
+        } else {
+          let loss = Math.floor(funds * 0.3);
+          funds -= loss;
+          showNotification("You got caught lying! Lost $" + loss + " funds.");
+        }
+      } else if (choice === 'bribe') {
+        let loss = Math.floor(funds * 0.15);
+        funds -= loss;
+        premiumPerClick += 10; // temporary bonus
+        showNotification("You bribed the agent! Lost $" + loss + " funds and gained a bonus!");
+        // Remove bonus after 30 seconds
+        setTimeout(() => { premiumPerClick -= 10; }, 30000);
+      }
+      updateDisplay();
+      hideChallenge();
+    }
+    
+    // Initialize displays and achievements menu
+    updateDisplay();
+    updateUpgradeDisplay();
+    updateAchievementsMenu();
+    checkPrestigeAvailability();
+  </script>
+</body>
+</html>

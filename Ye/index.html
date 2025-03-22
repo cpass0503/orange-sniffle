@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanye Zombie Mayhem: Ultimate Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="overlay">
+    <div id="overlayContent">
+      <h1>Kanye Zombie Mayhem</h1>
+      <p>Click "Start Game" to begin your adventure</p>
+      <button id="startButton">Start Game</button>
+    </div>
+  </div>
+  <div id="hud">
+    <span id="score">Score: 0</span>
+    <span id="health">Health: 100</span>
+  </div>
+  <canvas id="gameCanvas"></canvas>
+  
+<!-- Load Three.js library first -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- Then load the controls that depend on Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.137.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+
+<!-- Finally load your script that uses everything above -->
+<script src="script.js"></script>
+</body>
+</html>
